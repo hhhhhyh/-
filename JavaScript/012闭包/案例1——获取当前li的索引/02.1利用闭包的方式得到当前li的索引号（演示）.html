@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包应用-点击li输出当前li的索引号</title>
+    <script>
+        window.onload = function () {
+            //1、我们可以利用动态添加属性的方式
+            var lis = document.querySelector('.nav').querySelectorAll('li')
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].index = i
+                lis[i].onclick = function () {
+                    console.log(this.index)
+                }
+            }
+            //2、利用闭包的方式得到当前li的索引号
+            /*
+                执行流程：
+                    - 第一次循环时，i=0，
+                    - 创建立即执行函数
+                    - 立即执行函数的形参i接受实参0
+                    - function后的i接受第二个括号中的i的值
+            */
+            for(var i=0; i<lis.length; i++){
+                /*
+                    -立即执行函数
+                    -这里利用for循环创建了4个立即执行函数
+                */
+                (function(){
+                    console.log(i)
+                })(i)//这里的i是立即执行函数所接受的参数
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>帽子</li>
+        <li>上衣</li>
+        <li>裤子</li>
+        <li>鞋子</li>
+    </ul>
+</body>
+
+</html>

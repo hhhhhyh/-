@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div></div>
+        <script>
+            /*
+                innerText和innerHTML的区别
+            */
+            // 1、innerText
+            var div = document.querySelector('div')
+            div.innerText = '<strong>age<strong> = 18'  //innerText不识别html标签
+
+            // 2、innerHTML
+            div.innerHTML = '<strong>age<strong> = 18'  //innerHTML识别html标签，会实现加粗效果
+        </script>
+    </body>
+</html>

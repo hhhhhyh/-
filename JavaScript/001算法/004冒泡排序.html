@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //利用函数冒泡排序 sort 排序
+        function sort(arr) {
+
+            /*
+                第一层循环：对n个元素循环，需（n-1）次    
+                [最后一次不用遍历，因为此时最后一个元素已是最大值]
+            */
+            for (var i = 0; i < arr.length; i++) {
+
+                /*
+                    第二层循环：当前元素于后面的元素进行大小比较
+                    循环（比较）次数：arr.length - i(索引号) - 1
+                */
+                for (var j = 0; j < arr.length - i - 1; j++) {
+
+                    //如果前一个大于后一个,交换
+                    if(arr[j]>arr[j+1]){
+                        var temp = arr[j]
+                        arr[j] = arr[j+1]
+                        arr[j+1] = temp
+                    }
+                }
+            }
+            return arr
+        }
+        var arr1 = sort([1,7,2,9])
+        console.log(arr1)   //[1,2,7,9]
+    </script>
+</body>
+
+</html>

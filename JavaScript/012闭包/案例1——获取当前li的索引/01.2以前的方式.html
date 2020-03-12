@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包应用-点击li输出当前li的索引号</title>
+    <script>
+        window.onload = function () {
+            //1、我们可以利用动态添加属性的方式
+            var lis = document.querySelector('.nav').querySelectorAll('li')
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].index = i
+                lis[i].onclick = function () {
+                    console.log(this.index)
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>帽子</li>
+        <li>上衣</li>
+        <li>裤子</li>
+        <li>鞋子</li>
+    </ul>
+</body>
+
+</html>

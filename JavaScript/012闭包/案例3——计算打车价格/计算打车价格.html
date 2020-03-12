@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算打车价格</title>
+    <script>
+        /*
+            -打车起步价13（3公里），
+            -之后每多一公里增加5元
+
+            -用户输入公里数就可以计算打车价格
+            -如果有拥堵情况，总价格多收取10元拥堵费
+        */
+        window.onload = function () {
+            /*
+                方法一：
+                    -定义一个函数再调用（此处不推荐）
+            */
+            //function fn(){}
+            //fn()
+
+            /*
+                方法二：
+                    -使用立即执行函数，立即执行
+            */
+            var car = (function(){
+                var start = 13  //起步价
+                var total = 0   //总价
+                return{
+
+                    //正常的费用
+                    price:function(km){
+                        if(km<=3){
+                            total = start
+                        }else{
+                            total = start + (km-3)*5
+                        }
+                        return total
+                    }, 
+
+                    //拥堵之后的费用    
+                    ex_price:function(flag){
+                        return flag ? total + 10 : total
+                    }   
+                }
+            })()
+            console.log(car.price(5))       //23
+            console.log(car.ex_price(true)) //33
+
+            console.log(car.price(1))       //13
+            console.log(car.ex_price(false))//13
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

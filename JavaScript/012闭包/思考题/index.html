@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            //思考题 1
+            var name = "hhh"
+            var age = 11
+            var object = {
+
+                name: "My Object",
+
+                getNameFunc: function () {
+                    return function () {
+                        return this.name//这个this指向的是window
+                        //window下有个属性，name
+
+                        //该题没有闭包的产生
+                    }
+                }
+            }
+            var f = object.getNameFunc()
+            console.log(f)
+            var j = f()
+            console.log(j)
+            console.log(name)
+            console.log(object.getNameFunc()())//为什么输出不了？？
+            /*
+            var f = object.getNameFunc()
+            类似于
+            var f = function(){
+                return this.name
+            }
+            
+            f()
+            类似于
+            function(){this}()  //类似于一个立即执行函数，立即执行函数中的this指的是window
+            */
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
