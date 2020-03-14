@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            input{
+                color: #999;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" value="手机">
+        <script>
+            /*
+                尚且存在的问题：
+                    - 当在输入框输入一个空格时，在将光标移出，此时文本框中的默认值
+                        不会出现
+                    - 【解决方式】后面用正则表达式解决
+            */
+            var text = document.querySelector('input')
+
+            //得到焦点
+            text.onfocus = function(){
+                 if(this.value === '手机'){//如果value值为默认值
+                     this.value = ''
+                 }
+
+                 //此时在输入文本时，需要将文本框中的文字变黑
+                 this.style.color = '#333'
+            }
+
+            //失去焦点
+            text.onblur = function(){//如果value值为空
+                if(!this.value){
+                    this.value = '手机'
+                }
+
+                //失去焦点，此时需要将文字变为浅色
+                this.style.color = '#999'
+            }
+        </script>
+    </body>
+</html>
