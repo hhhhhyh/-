@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .box{
+                position: relative;
+                width: 400px;
+                /* border: 1px solid red; */
+                /* border-bottom: 1px solid#ccc; */
+                border-bottom: 1px solid red;
+                margin: 100px auto;
+            }
+            .box input{
+                width: 370px;
+                height: 30px;
+                border: 0;  /* 删除密码框的边框样式 */
+                outline: none;  /* 删除密码框输入时的样式 */
+            }
+            .box img{
+                position: absolute;
+                top: 2px;
+                right: 2px;
+                width: 24px;
+            }
+            /* 
+                图片可用两种方式插入
+                    1、插入图片的方式
+                    2、背景图片的方式
+            */
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <label for=""></label>
+            <img src="./images/eye1.jpg" alt="" id="eye">
+            <input type="password" name="" id="pw">
+        </div>
+        <script>
+            //1、获取元素
+            var eye = document.getElementById('eye')
+            var pw = document.getElementById('pw')
+
+            //2、绑定事件 处理程序
+            var flag = 0
+            eye.onclick = function(){
+                //点击一次之后，flag一定要变化
+                if(flag == 0){
+                    pw.type = "text"
+                    eye.src = "./images/eye2.jpg"
+                    flag = 1    //变换flag的值
+                }else{
+                    pw.type = "password"
+                    eye.src = "./images/eye1.jpg"
+                    flag = 0    //重新赋值
+                }
+                
+                
+            }
+        </script>
+    </body>
+</html>

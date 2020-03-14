@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="ss">松鼠</button>
+        <button id="y">羊</button>
+        <img src="./images/001.jpg" alt="" title="松鼠">
+
+        <script>
+            //  修改元素的属性  src
+            //  1、获取元素
+            var ss = document.getElementById('ss')
+            var y = document.getElementById('y')
+            var img = document.querySelector('img')
+
+            //2、注册事件
+            ss.onclick = function(){
+                img.src = './images/001.jpg' 
+                img.title = '松鼠'
+            }
+            y.onclick = function(){
+                img.src = './images/002.jpg' 
+                img.title = '羊'
+            }
+
+        </script>
+    </body>
+</html>

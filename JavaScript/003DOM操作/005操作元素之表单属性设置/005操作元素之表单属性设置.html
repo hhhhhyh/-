@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <input type="text" value="输入内容">
+    <script>
+        //1、获取元素
+        var btn = document.querySelector('button')
+        var input = document.querySelector('input')
+
+        //2、绑定事件
+        btn.onclick = function () {
+            /*
+                【注】
+                    - innerHTML修改的时普通盒子里面的内容，如div里面的内容
+                    - 而表单元素的内容只能通过value修改
+            */
+            input.value = '被点击了'
+
+            //如果想要某个表单被禁用 不能再点击，则用 disabled
+            // btn.disabled = true
+            this.disabled = true
+            // this指向的是事件函数的调用者 btn
+        }
+    </script>
+</body>
+
+</html>
