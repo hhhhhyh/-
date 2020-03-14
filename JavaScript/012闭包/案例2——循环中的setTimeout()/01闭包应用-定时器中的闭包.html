@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01闭包应用-定时器中的闭包</title>
+    <script>
+        //闭包应用-3秒后打印所有的li元素
+        window.onload = function () {
+            var lis = document.querySelector('.nav').querySelectorAll('li')
+            for (var i = 0; i < lis.length; i++) {
+                (function (ii) {
+                    /*
+                        只要在立即执行函数里面的函数，都可以使用立即执行函数中的ii变量
+                    */
+                    setTimeout(function () {
+                        console.log(lis[ii].innerHTML)
+                    }, 3000)
+                })(i)
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>衣服</li>
+        <li>裤子</li>
+        <li>鞋子</li>
+    </ul>
+</body>
+
+</html>
