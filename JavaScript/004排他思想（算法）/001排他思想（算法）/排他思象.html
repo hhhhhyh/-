@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <script>
+        //1、获取所有元素按钮
+        /*
+            这里老师说：
+                - 如果想兼容，就用tagname
+                - 如果想不兼容，就用selectorall
+        */
+        var btns = document.getElementsByTagName('button') //该方式兼容以前的版本（如IE6、7、8）
+
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+
+                //1、先将所有按钮的背景颜色还原
+                /*
+                    下面的循环，用i代替j，不会有问题（是不是和块作用域什么的有关系？）
+                */
+                for(var j =0; j<btns.length; j++){
+                    btns[j].style.backgroundColor = ''
+                }
+
+                //2、使当前点击的按钮变色
+                this.style.backgroundColor = 'red'
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
