@@ -15,9 +15,7 @@ li{
     /* 如果一个盒子给了一个padding值，会撑大盒子 */
     padding: 5px;
     background-color: #F7F8F7;
-    
 }
-
 .box h2{
     font-size: 18px;
     padding: 5px 0;
