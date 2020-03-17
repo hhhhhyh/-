@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0;
+}
+/* 取消列表样式 */
+li{
+    list-style: none;
+}
+.box{
+    width: 398px;
+    height: 198px;
+    border: 1px solid #ccc;
+    /* 块级盒子水平居中 */
+    margin: 100px auto;
+    /* 如果一个盒子给了一个padding值，会撑大盒子 */
+    padding: 5px;
+    background-color: #F7F8F7;
+    
+}
+
+.box h2{
+    font-size: 18px;
+    padding: 5px 0;
+    height: 30px;
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 10px;
+}
+
+.box ul li{
+    height: 30px;
+    line-height: 25px;
+    /* background-color: #bfa; */
+    border-bottom: 1px dashed#ccc;
+    background: url(../images/arr.jpg) no-repeat 0 center ;
+    /* background-color: red; */
+}
+
+.box ul li a{
+    color: #333;
+    font-size: 12px;
+    text-decoration: none;
+    /* margin-left: 18px; */
+    /* 以为这个li没有宽度，padding不会撑开盒子 */
+    padding-left: 18px;
+}
+
+.box ul li a:hover{
+    text-decoration: underline;
+}
