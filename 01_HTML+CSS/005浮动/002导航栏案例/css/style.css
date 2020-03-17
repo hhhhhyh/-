@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+
+.banner {
+    width: 760px;
+    height: 150px;
+    background-color: pink;
+
+    margin: auto;
+    /* margin: 0 auto; */  /* 两种方式一样  */
+}
+
+.nav {
+    width: 760px;
+    height: 32px;
+    background-color: red;
+    background: url(../images/nav_bg.png);
+
+    margin: 0 auto;
+    /* margin: auto; */  /* 两种方式一样  */
+}
+img {
+    width: 700px;
+    height: 150px;
+}
+
+ul>li {
+    /* 因为li 让文字竖着显示，所以必须给 li 添加浮动 */
+    float: left;
+    line-height: 32px;  
+}
+
+ul>li>a {
+    /* a 是行内元素，需要转换 */
+    margin: 0 0 0 1px;
+    display: block;
+    width: 80px;
+    height: 32px;
+    line-height: 32px;
+    text-decoration: none;
+    color: #fff;
+    background: url(../images/1.jpg);
+    font-size: 12px;
+    text-align: center;
+}
+
+li>a:hover {
+    background: url(../images/2.jpg);
+    color: blue;
+}
