@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #bfa;
+}
+
+.all {
+    width: 1226px;
+    margin: 100px auto;
+}
+
+.all>.title {
+    height: 58px;
+    background-color: #F5F5F5;
+}
+
+#phone {
+    float: left;
+    line-height: 58px;
+    font-size: 22px;
+}
+
+#search {
+    float: right;
+}
+
+#search>a {
+    text-decoration: none;
+    line-height: 58px;
+    font-size: 16px;
+    color: #424242;
+}
+.box {
+    margin: 0 auto;
+    width: 1226px;
+    height: 614px;
+    background-color: #F5F5F5;
+}
+
+.box_left {
+    float: left;
+    width: 234px;
+    height: 614px;
+    /* background-color: orange; */
+    background-image: url(../images/1.webp);
+}
+
+.box_rigth {
+    float: left;
+    width: 978px;
+    height: 628px;
+    background-color: orange;
+}
+
+.box_rigth>ul {
+    background-color: #F5F5F5;
+}
+
+.box_right>ul>li {
+    background-position: center 0;
+    margin: 0 0 14px 14px;
+    list-style: none;
+    width: 234px;
+    height: 300px;
+    background-color: #FFFFFF;
+    float: left;
+    text-align: center;
+    
+}
+
+.box_right a {
+    text-decoration: none;
+}
+.box_right a h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.box_right>ul>li:hover {
+    /* 这里还不知道如何使li达到浮起来的效果 */
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+}
