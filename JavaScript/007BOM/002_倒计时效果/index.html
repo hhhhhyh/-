@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+
+        </style>
+        <script>
+            window.addEventListener(load,function(){
+                var hour = document.querySelector('.hour')
+                var minute = document.querySelector('.minute')
+                var second = document.querySelector('.second')
+
+                function countDown(time){
+                    var nowTime = +new Date()   //返回当前时间总的毫秒数
+                    var inputTime = new Date(time)  //返货的时用户输入时间总的毫秒数
+                    var times = (inputTime - nowTime)/1000  //times 是剩余时间总的秒数
+                    var d = parseInt(times/60/60/24)    //天
+                    d = d < 10 ? '0' + d : d
+                    var h = parseInt(times/60/60%24)    //时
+                    h = h < 10 ? '0' + h : h
+                    var m = parseInt(times/60%60)    //分
+                    m = m < 10 ? '0' + m : m
+                    var s = parseInt(times%60)    //当前的秒
+                    s = s < 10 ? '0' + s : s
+                    return d + '天' + h + '时' + m + '分' + s + '秒'
+                }
+                // console.log(countDown(..))
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <span class="hour">1</span>
+            <span class="minute">2</span>
+            <span class="second">3</span>
+        </div>
+    </body>
+</html>
