@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+    </style>
+    <script>
+
+
+        window.addEventListener('load', function () {
+            var ad = document.querySelector('.ad')
+
+            setTimeout(fn,5000)
+
+            function fn() {
+                ad.style.display = 'none'
+            }
+
+            /* setTimeout(function(){
+                ad.style.display = 'none'
+            },3000) */
+        })
+
+
+
+    </script>
+</head>
+
+<body>
+    <div class="ad">广告</div>
+</body>
+
+</html>
