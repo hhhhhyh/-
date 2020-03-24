@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 960px;
+            height: 540px;
+            margin: 100px auto;
+            /* background-color: #bfa; */
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            /* z-index: 2; */
+            top: 0;
+            left: 0;
+
+            width: 960px;
+            height: 540px;
+            background: rgba(0, 0, 0, .3) url(images/p.png) no-repeat center center;
+        }
+
+
+        .box img {
+            /* position: absolute; */
+            /* z-index: 1; */
+            width: 100%;
+        }
+
+        /* 伪类选择器结合后代选择器指：鼠标经过a时，里面的mask样式改变 */
+        .box a:hover .mask{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href="#">
+            <div class="mask"></div>
+            <img src="./images/1.jpg" alt="">
+        </a>
+
+    </div>
+</body>
+
+</html>
