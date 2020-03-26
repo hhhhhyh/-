@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+            - 当元素通过transform进行效果处理后，再次对其使用旋转动画，出现旋转失败的结果
+                - 测试方法：通过trasnform: translate() 对元素位移
+
+            - 此外，通过transform属性处理后的元素，旋转时的默认中心点，
+                既不是处理前的元素的中心点，
+                也不是处理后的元素的中心点，
+                而是变化前后所构成的整个图像的默认中心点
+
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 设置边框 */
+        .border {
+            margin-top: 99px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            float: left;
+            border: 1px solid red;
+            width: 400px;
+            height: 200px;
+            z-index: 1;
+        }
+        /* #bfa盒子 */
+        .father {
+            margin-top: 100px;
+            /* margin-top: 301px; */
+
+            left: 50%;
+            margin-left: -200px;
+            float: left;
+            position: relative;
+            width: 400px;
+            height: 200px;
+            background-color: #bfa;
+            transition: all 10s;
+            z-index: 10;
+
+            /* transform: translateY(201px); */
+            /* transform-origin: 50% 100%; */
+        }
+        /* 模拟中心点 */
+        .son {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+        .father:hover.father {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="border"></div>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>
