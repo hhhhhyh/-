@@ -8,7 +8,7 @@
 .fr {
     float: right;
 }
-@font-face {
+/* @font-face {
     font-family: 'icomoon';
     src: url('../fonts/icomoon.eot?7kkyc2');
     src: url('../fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
@@ -17,7 +17,19 @@
     url('../font/icomoon.svg??7kkyc2#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
-}
+} */
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?sz2z9h');
+    src:  url('../fonts/icomoon.eot?sz2z9h#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?sz2z9h') format('truetype'),
+      url('../fonts/icomoon.woff?sz2z9h') format('woff'),
+      url('../fonts/icomoon.svg?sz2z9h#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
 .fr .icomoon {
     font-family: 'icomoon';
     font-size: 16px;
