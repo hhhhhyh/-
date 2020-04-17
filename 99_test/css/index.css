@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #aaa;
+}
+.display-left {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 794px;
+  height: 404px;
+  margin-left: 348px;
+  margin-top: 93px;
+  margin-bottom: 74px;
+}
+.display-left > img {
+  width: 17px;
+  height: 32px;
+}
+.img-gather > li {
+  float: left;
+}
+.display-left .arr img:nth-child(1) {
+  position: absolute;
+  top: 186px;
+  left: 0;
+}
+.display-left .arr img:nth-child(2) {
+  position: absolute;
+  top: 186px;
+  right: 0;
+}
+.img-gather {
+  display: inline-block;
+  width: 620px;
+  height: 100%;
+  margin-left: 74px;
+  margin-right: 66px;
+  list-style: none;
+}
+.img-gather .p5 > img {
+  width: 196px;
+  height: 404px;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 91px;
+}
+.img-gather .p4 > img {
+  width: 181px;
+  height: 371px;
+  position: absolute;
+  z-index: 90;
+  top: 16px;
+  left: 240px;
+}
+.img-gather .p3 > img {
+  width: 161px;
+  height: 337px;
+  position: absolute;
+  z-index: 80;
+  top: 33px;
+  left: 372px;
+}
+.img-gather .p2 > img {
+  width: 120px;
+  height: 306px;
+  position: absolute;
+  z-index: 70;
+  top: 49px;
+  left: 507px;
+}
+.img-gather .p1 > img {
+  width: 131px;
+  height: 280px;
+  position: absolute;
+  z-index: 60;
+  top: 62px;
+  left: 580px;
+}
