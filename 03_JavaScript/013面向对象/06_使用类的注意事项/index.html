@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click</button>
+    <script>
+        var that
+        var _that
+        class Star {
+            constructor(uname,age){
+                //constructor 里面的 this 指向的是创建的实例对象
+                that = this
+                console.log(this)
+
+                this.uname = uname
+                this.age = age
+                // this.btn = document.getElementsByTagName('button')
+                this.btn = document.querySelector('button')
+                this.btn.onclick = this.sing()  //这里的 sing 是实例对象的，所以一定要用 this.sing 
+            }
+            sing(){
+                console.log(this.uname)
+            }
+            dance(){
+                //  这个 dance里面的 this 指向的是实例对象 ldh 因为 ldh 调用了这个函数
+                _that = this
+                console.log(this + "in dance")
+            }
+        }
+
+        var ldh = new Star('Scrain')
+        console.log(that == ldh)
+        ldh.dance()
+    </script>
+</body>
+</html>
